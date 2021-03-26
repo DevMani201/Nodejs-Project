@@ -47,6 +47,7 @@ a:hover {
 #header {
     background-color: #2d2626;
     padding: 10px 0;
+    width: 100%;
 }
 
 #header h4, #header ul {
