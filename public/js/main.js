@@ -30,7 +30,7 @@ const getInfo = async (event) => {
     } else {
 
         try {
-            let url = `http://api.openweathermap.org/data/2.5/weather?q=${cityValue}&units=metric&appid=89bbf6c1b0682176c05edc2bc8105e36`;
+            let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityValue}&units=metric&appid=89bbf6c1b0682176c05edc2bc8105e36`;
             const response = await fetch(url);     //feachApi
             const data = await response.json();
             const dataArr = [data];
@@ -47,8 +47,12 @@ const getInfo = async (event) => {
             windSpeed.innerHTML = `Wind Speed: ${dataArr[0].wind.speed}km/h`;
             var sunriseTime = dataArr[0].sys.sunrise;
             var sunsetTime = dataArr[0].sys.sunset;
-            var sunriseTimes = msToTime(sunriseTime);
-            var sunsetTimes = msToTime(sunsetTime);
+            var sunriseTimes1 = new Date(sunriseTime * 1000);
+            var sunsetTimes1 = new Date(sunsetTime * 1000);
+
+            var sunriseTimes = sunriseTimes1.toLocaleTimeString();
+            var sunsetTimes = sunsetTimes1.toLocaleTimeString();
+
             sunRise.innerHTML = `${sunrise} ${sunriseTimes}`;
             sunSet.innerHTML = `${sunset} ${sunsetTimes}`;
 
@@ -128,6 +132,6 @@ function msToTime(s) {
     s = (s - secs) / 60;
     var mins = s % 60;
     var hrs = (s - mins) / 60;
-  
-    return hrs + ':' + mins + ':' + secs ;
-  }
+
+    return hrs + ':' + mins + ':' + secs;
+}
