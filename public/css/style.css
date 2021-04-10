@@ -142,6 +142,10 @@ a:hover {
     #close {
         display: block;
     }
+    .open {
+        height: 30px;
+        padding: 15px 5px;
+    }
     .menu {
         display: block;
         position: absolute;
@@ -168,8 +172,8 @@ a:hover {
     .menu-lines {
         position: relative;
         cursor: pointer;
-        width: 35px;
-        height: 2px;
+        width: 40px;
+        height: 3px;
         background-color: #fff;
         display: block;
     }
@@ -182,11 +186,11 @@ a:hover {
     }
     .menu-lines::before {
         right: 0;
-        top: -6px;
+        top: -10px;
     }
     .menu-lines::after {
         right: 0;
-        top: 6px;
+        top: 10px;
     }
     .search {
         width: 100%;
