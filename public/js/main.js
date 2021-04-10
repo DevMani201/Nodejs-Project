@@ -1,4 +1,4 @@
-var searchData = document.getElementById('searchdata');
+const searchData = document.getElementById('searchdata');
 const city = document.getElementById("city");
 const time = document.getElementById("time");
 const day = document.getElementById("day");
@@ -17,6 +17,21 @@ const windSpeed = document.getElementById("windspeed");
 const loc = document.getElementById("loc");
 const riseImg = document.getElementById("rise-img");
 const setImg = document.getElementById("set-img");
+
+
+
+const menubars = document.querySelector(".open");
+const close = document.querySelector("#close");
+const menu = document.querySelector(".menu");
+
+
+close.addEventListener("click", () => {
+    menu.style.transform = "translateX(-100%)";
+});
+
+menubars.addEventListener("click", () => {
+    menu.classList.toggle("opencolse");
+});
 
 
 
@@ -133,19 +148,3 @@ function showTime() {
 showTime();
 
 
-
-
-const menubars = document.querySelector(".open");
-const close = document.querySelector("#close");
-const menu = document.querySelector(".menu");
-
-
-close.addEventListener("click", () => {
-    menu.style.transform = "translateX(-100%)";
-});
-
-
-
-menubars.addEventListener("click", () => {
-    menu.classList.toggle("opencolse");
-});
