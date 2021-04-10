@@ -23,14 +23,22 @@
                     <h4>ManishWeather</h4><i class="fa fa-sun-o" aria-hidden="true"></i>
 
                 </div>
-                <div class="main-menu">
-                    <ul class="menu">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Weather</a></li>
-                        <li><a href="#">Contact us</a></li>
-                    </ul>
-                </div>
+                <nav>
+                    <div class="main-menu">
+                        <div class="open">
+
+                            <span class="menu-lines"></span>
+
+                        </div>
+                        <ul class="menu">
+                            <div id="close">&times;</div>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="about">About Us</a></li>
+                            <li><a href="weather">Weather</a></li>
+                            <li><a href="contact">Contact us</a></li>
+                        </ul>
+                    </div>
+                </nav>
             </div>
         </div>
     </header>
@@ -41,30 +49,28 @@
                 <form>
                     <div class="search">
                         <input type="text" class="search_input" id="city" placeholder="Enter City Name">
-                        <a href="#" class="search_icon"><i class="fa fa-search"></i></a>
+                        <a href="#" class="search_icon" id="searchdata"><i class="fa fa-search"></i></a>
                     </div>
                 </form>
                 <section id="section-main">
                     <div class="main-content">
-                        <!-- <div class="row">
-                            <div class="col-md-6"> -->
-                                <div class="day-time">
-                                    <div class="day">
-                                        <p id="day">Wed</p>
-                                    </div>
-                                    <div class="time">
-                                        <p id="time">17:27</p>
-                                    </div>
-                                </div>
-                                <div class="tem-tem_stauts">
-                                    <div class="tem">
-                                        <p id="temp">32<sup>0</sup>C</p>
-                                    </div>
-                                    <div class="tem-status">
-                                        <p id="temp-status">cloudy</p>
-                                    </div>
-                                <!-- </div>
-                            </div> -->
+
+                        <div class="day-time">
+                            <div class="day">
+                                <p id="day">Wed</p>
+                            </div>
+                            <div class="time">
+                                <p id="time">17:27</p>
+                            </div>
+                        </div>
+                        <div class="tem-tem_stauts">
+                            <div class="tem">
+                                <p id="temp">32<sup>0</sup>C</p>
+                            </div>
+                            <div class="tem-status">
+                                <p id="temp-status">cloudy</p>
+                            </div>
+
                         </div>
                     </div>
 

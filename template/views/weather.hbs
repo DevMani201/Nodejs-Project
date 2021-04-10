@@ -12,9 +12,6 @@
             </form>
             <section id="section-main">
                 <div class="main-content">
-                    <!-- <div class="row">
-                            <div class="col-md-6"> -->
-                    {{!-- 1.35 --}}
                     <div class="top-layer">
                         <div class="day-time-date">
                             <div class="day">
@@ -30,40 +27,40 @@
                     </div>
                     <div class="shows-output">
                         <div class="cityname">
-                            {{!-- <span><i class="fa fa-map-marker" aria-hidden="true"></i></span> --}}
-                            <span id="output" class="fa">Please Enter Valid City Name</span>
+                            <span id="loc" class="fa"></span>
+                            <span id="output">Please Enter Valid City Name</span>
                         </div>
                         <div class="showhide">
                             <div class="sunrise-sunset">
+                                <img id="rise-img" src="" alt="sunrise">
                                 <span id="rise" class="fa">
-
                                 </span>
+                                <img id="set-img" src="" alt="sunset">
                                 <span id="set" class="fa">
-
                                 </span>
                             </div>
-
+                            <div class="tem">
+                                <span id="temp">32</span>
+                                <span><sup>0</sup>C</span>
+                            </div>
 
                             <div class="tem-tem_stauts">
 
-                                <div class="tem">
-                                    <span id="temp">32</span>
-                                    <span><sup>0</sup>C</span>
+                                <div class="additional">
                                     <p id="humidity"></p>
                                     <p id="pressure">1000mbar</p>
                                     <p id="windspeed">14.8km/h</p>
 
                                 </div>
                                 <div class="tem-status">
-                                    <p id="temp-status" class="fa">&#127787;</p>
+                                    {{!-- <p id="temp-status" class="fa">&#127787;</p> --}}
+                                    <img id="temp-status" src="" alt="weatherstatus">
                                 </div>
-                                <!-- </div>
-                            </div> -->
+
                             </div>
                         </div>
                     </div>
                 </div>
-
             </section>
         </div>
     </div>

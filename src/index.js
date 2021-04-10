@@ -62,6 +62,20 @@ app.get("*", (req, res) => {
 });
 
 
+
 app.listen(port, () => {
     console.log("success");
 });
+
+// app.listen(3000, () => {
+//     console.log("success");
+// });
+
+
+// app.listen(5000, () => {
+//     console.log("success");
+// });
+
+// app.listen(8000, () => {
+//     console.log("success");
+// });

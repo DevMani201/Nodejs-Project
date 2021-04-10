@@ -14,6 +14,12 @@ const humi = document.getElementById("humidity");
 const press = document.getElementById("pressure");
 const windSpeed = document.getElementById("windspeed");
 
+const loc = document.getElementById("loc");
+const riseImg = document.getElementById("rise-img");
+const setImg = document.getElementById("set-img");
+
+
+
 
 // const city = "pune";
 // alert("Manish Kumar");
@@ -35,10 +41,9 @@ const getInfo = async (event) => {
             const data = await response.json();
             const dataArr = [data];
             // console.log(dataArr.main["temp"]);
-            var loc = "&#xf041";
-            var sunrise = "&#xf111";
-            var sunset = "&#xf111";
-            output.innerHTML = `${loc}${cityValue},${dataArr[0].sys.country}`;
+            loc.innerHTML = "&#xf041";
+            loc.style.color = "red";
+            output.innerHTML = ` ${cityValue},${dataArr[0].sys.country}`;
             tem.innerHTML = dataArr[0].main.temp;
             tempCond = dataArr[0].weather[0].main;
             // tempCond = Rain;
@@ -52,25 +57,31 @@ const getInfo = async (event) => {
 
             var sunriseTimes = sunriseTimes1.toLocaleTimeString();
             var sunsetTimes = sunsetTimes1.toLocaleTimeString();
-
-            sunRise.innerHTML = `${sunrise} ${sunriseTimes}`;
-            sunSet.innerHTML = `${sunset} ${sunsetTimes}`;
+            riseImg.src = "img/sunrise.png";
+            setImg.src = "img/sunset.png";
+            sunRise.innerHTML = `${sunriseTimes}`;
+            sunSet.innerHTML = `${sunsetTimes}`;
 
             if (tempCond == "Clear") {
-                temStatus.innerHTML = "&#xf185";
-                temStatus.style.color = "#eccc68";
+                // temStatus.innerHTML = "&#xf185";
+                // temStatus.style.color = "#eccc68";
+                temStatus.src = "img/weatherstatus/sunny.png";
             } else if (tempCond == "clouds") {
-                temStatus.innerHTML = "&#xf0c2";
-                temStatus.style.color = "#f1f2f6";
+                // temStatus.innerHTML = "&#xf0c2";
+                // temStatus.style.color = "#f1f2f6";
+                temStatus.src = "img/weatherstatus/clouds.png";
             } else if (tempCond == "Rain") {
-                temStatus.innerHTML = "&#x1F327;";
-                temStatus.style.color = "#a4b0be";
+                // temStatus.innerHTML = "&#x1F327;";
+                // temStatus.style.color = "#a4b0be";
+                temStatus.src = "img/weatherstatus/rain.png";
             } else if (tempCond == "Haze" || tempCond == "smoky") {
-                temStatus.style.color = "#C6C6DC";
-                temStatus.innerHTML = "&#127787;";
+                // temStatus.style.color = "#C6C6DC";
+                // temStatus.innerHTML = "&#127787;";
+                temStatus.src = "img/weatherstatus/foggy.png";
             } else {
-                temStatus.innerHTML = "&#xf185;";
-                temStatus.style.color = "yellow";
+                // temStatus.innerHTML = "&#xf185;";
+                // temStatus.style.color = "yellow";
+                temStatus.src = "img/weatherstatus/sunny.png";
             }
             showHide.classList.remove("showhide");
 
@@ -100,10 +111,6 @@ function showTime() {
     day.innerHTML = dayss[days];
     date1.innerHTML = `${dates},${monthss[months]}`;
 
-
-
-
-
     if (h == 0) {
         h = 12;
     }
@@ -125,13 +132,20 @@ function showTime() {
 }
 showTime();
 
-function msToTime(s) {
-    var ms = s % 1000;
-    s = (s - ms) / 1000;
-    var secs = s % 60;
-    s = (s - secs) / 60;
-    var mins = s % 60;
-    var hrs = (s - mins) / 60;
 
-    return hrs + ':' + mins + ':' + secs;
-}
+
+
+const menubars = document.querySelector(".open");
+const close = document.querySelector("#close");
+const menu = document.querySelector(".menu");
+
+
+close.addEventListener("click", () => {
+    menu.style.transform = "translateX(-100%)";
+});
+
+
+
+menubars.addEventListener("click", () => {
+    menu.classList.toggle("opencolse");
+});
