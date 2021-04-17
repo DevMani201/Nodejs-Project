@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400;500&family=Lato:ital,wght@0,400;0,700;1,300;1,400;1,700&family=Rajdhani:wght@300;400;500;700&display=swap');
 :root {
-    --main-color: ;
-    --secondary-color: ;
+    --main-color: #5959f1;
+    --secondary-color: #000066;
     --main-font: 'Lato', sans-serif;
     --head-font: 'Rajdhani', sans-serif;
 }
@@ -100,7 +100,7 @@ a:hover {
 }
 
 .menu li a {
-    /* padding: 0 20px; */
+  
     position: relative;
 }
 
@@ -109,12 +109,13 @@ a:hover {
     content: "";
     width: 0;
     height: 3px;
-    background: red;
+    background: var(--main-color);
     top: 100%;
     left: 0;
     right: 0;
     margin: 0 auto;
     transition: 0.5s ease-in-out;
+    border-radius: 50%;
 }
 
 .menu li a:hover::before {
@@ -151,7 +152,7 @@ a:hover {
         position: absolute;
         top: 0;
         left: 0;
-        background: #000066;
+        background: var(--secondary-color);
         padding: 35px 2px;
         transform: translateX(-100%);
         z-index: 999;
@@ -163,7 +164,7 @@ a:hover {
         transform: translateX(0%);
     }
     .menu li {
-        border-bottom: 1px solid #5959f1;
+        border-bottom: 1px solid var(--main-color);
         padding: 12px 15px;
     }
     .logo h4 {
@@ -230,11 +231,11 @@ a:hover {
 
 .main-btn:hover {
     transform: translateY(-5px);
-    /* background: linear-gradient(to right, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0.3)); */
+   
 }
 
 .main-btn:hover .enquiry-btn {
-    /* transform: translateY(-5px); */
+  
     background: linear-gradient(to right, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0.3));
 }
 
@@ -242,7 +243,10 @@ a:hover {
     margin-bottom: 10px;
 }
 
-.right-section {}
+.weather-color{
+    color: var(--main-color);
+}
+
 
 /* -------------------middle section ends----------------- */
 
